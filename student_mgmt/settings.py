@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 """
 
 from pathlib import Path
+import os
+
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,8 +28,8 @@ SECRET_KEY = 'django-insecure-3s%pe5j7)^ti6j3o5w(jx-ap%)t)q_8m*)@it)$f7ns5=ujcu)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['student-management-system-7w6u.onrender.com']
+CSRF_TRUSTED_ORIGINS = ['https://student-management-system-7w6u.onrender.com']
 
 # Application definition
 
@@ -69,6 +72,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'student_mgmt.wsgi.application'
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
